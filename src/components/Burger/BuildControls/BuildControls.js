@@ -12,15 +12,18 @@ import BuildControl from './BuildControl/BuildControl';
 
      return (
         <div className= {Styles.buildControls} >
+        <p><b>CURRENT PRICE:  {props.Price.toFixed(2)} </b></p>
         {
             Controls.map( each => {
                      return <BuildControl key={each.label}
                       label = {each.label} 
                       click = { () => props.ingredientsAdded(each.type)}
                       removeIngredient = {() => props.ingredientsRemoved(each.type)}
+                      disabled = {props.disabled[each.type]}
                       />
             })
-        }            
+        }
+        <button className={Styles.OrderButton} disabled = {!props.purchasable} onClick = {props.ordered}>ORDER NOW</button>            
         </div>
      );
  }
