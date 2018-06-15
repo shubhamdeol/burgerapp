@@ -1,0 +1,15 @@
+.CheckoutSummery{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.CheckoutSummery h1 {
+    text-align: center;
+}
+
+@media(max-width: 500px) {
+    .CheckoutSummery h1{
+        font-size: 22px;
+    }
+}
